@@ -1,21 +1,2 @@
 <h1>{{title}}-</h1>
-				<table cellpadding="0" cellspacing="0">
-
-					<tr>
-						<th>Name</th>
-						<th>Android Version</th>
-						<th>Price</th>
-						<th>Stock availabilty</th>  
-						<th>Last date for Purchase</th>
-					</tr>
-					<tr *ngFor="let ph of mobiles">  <!-- ngfor loop through an array-->
-					    <td > {{ph.name | uppercase}}</td>
-						<td> {{ph.version}}</td>
-						<td> {{ph.price | currency:'INR' }}</td>
-						<td *ngIf="ph.stock>0" >{{ph.stock}}</td>  <!-- ngif is structural directives which allows us to conditional -->
-						<td *ngIf="ph.stock===0"> out Of Stock</td>
-						<td>{{ph.availablility | date:'M/d/y'}}</td>
-					</tr>
-				</table>
-
-				<p>Total available phones in stocks are <b style="color:red">{{totalStockleft()}}</b></p>  
+		<app-mob-parts>loading.........</app-mob-parts>
