@@ -1,11 +1,26 @@
-
-<ul style="width: 100%" >
-	<li *ngFor="let ph of mobiles" class="right" [class.inStockCSS]="ph.inStockCSS" >
-		<h2>{{ph.id}}</h2>
-		<div><img height="150px" src="{{ph.image}}"></div>
-		<h2 class="mobPartName"> {{ph.name | uppercase}}</h2>
-		<p style="color:green">Price {{ph.price | currency:'INR' }}</p>
-		<p *ngIf="ph.stock>0">Stock left: {{ph.stock}}</p>
-		<p *ngIf="ph.stock==0"><Mark>Out of Stock</Mark></p>
-	</li >
+<ul style="width: 100%">
+    <li *ngFor="let ph of mobiles" class="right" [class.inStockCSS]="ph.inStockCSS">
+        <!-- if class.instockCss is true instockcss class is added. if instockclass is false the instockClass is removed-->
+        <h2>{{ph.id}}</h2>
+        <div><img  height="150px" src="{{ph.image}}"></div>
+        <h2 class="mobPartName"> {{ph.name | uppercase}}</h2>
+        <p style="color:green">Price {{ph.price | currency:'INR' }}</p>
+        <p *ngIf="ph.stock>0">Stock left: {{ph.stock}}</p>
+        <p *ngIf="ph.stock==0">
+            <Mark>Out of Stock</Mark>
+        </p>
+        <button [disabled]="ph.disabled">Add to cart</button>
+        <!--
+        <button *ngIf="ph.stock==0" disabled>Add to cart</button>
+        <button *ngIf="ph.stock>0" >Add to cart</button>
+        -->
+    </li>
 </ul>
+<!--[ note : when code is interpolated, the properties are read from the component and string are printed. ]
+
+Propert Binding :-  All we need to do is add brackets and specify a component property.
+for example :-   <button [disabled]="isDisabled">Add to cart</button>
+Propert binding allows us to bind our component to our DOM element properties
+Any update to the compoent property value will update the DOM properties but nOT vice a versa that is why it is one-way binding
+Class binding allows us to specify a CSS class to add to a DOM element if a component property is true
+-->
