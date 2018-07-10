@@ -1,0 +1,11 @@
+
+<ul style="width: 100%" >
+	<li *ngFor="let ph of mobiles" class="right" [class.inStockCSS]="ph.inStockCSS" >
+		<h2>{{ph.id}}</h2>
+		<div><img height="150px" src="{{ph.image}}"></div>
+		<h2 class="mobPartName"> {{ph.name | uppercase}}</h2>
+		<p style="color:green">Price {{ph.price | currency:'INR' }}</p>
+		<p *ngIf="ph.stock>0">Stock left: {{ph.stock}}</p>
+		<p *ngIf="ph.stock==0"><Mark>Out of Stock</Mark></p>
+	</li >
+</ul>
