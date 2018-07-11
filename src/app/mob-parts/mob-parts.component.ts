@@ -27,4 +27,20 @@ export class MobPartsComponent implements OnInit {
         return sum;
     }
 
+    upqty(mobileDetails) {
+
+        if (mobileDetails.qty < mobileDetails.stock) {
+            return mobileDetails.qty++;
+        }
+
+
+    }
+
+    downqty(mobileDetails) {
+
+        if (mobileDetails.qty > 0) {
+            return mobileDetails.qty--;
+        }
+    }
+
 }

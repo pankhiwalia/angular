@@ -7,4 +7,5 @@ export class MobPartDataType {
     inStockCSS: boolean;
     image: string;
     disabled: boolean;
+    qty: number;
 }

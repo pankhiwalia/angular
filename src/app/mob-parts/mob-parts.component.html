@@ -1,21 +1,26 @@
-<ul style="width: 100%">
-    <li *ngFor="let ph of mobiles" class="right" [class.inStockCSS]="ph.inStockCSS">
-        <!-- if class.instockCss is true instockcss class is added. if instockclass is false the instockClass is removed-->
-        <h2>{{ph.id}}</h2>
-        <div><img  height="150px" src="{{ph.image}}"></div>
-        <h2 class="mobPartName"> {{ph.name | uppercase}}</h2>
-        <p style="color:green">Price {{ph.price | currency:'INR' }}</p>
-        <p *ngIf="ph.stock>0">Stock left: {{ph.stock}}</p>
-        <p *ngIf="ph.stock==0">
-            <Mark>Out of Stock</Mark>
-        </p>
-        <button [disabled]="ph.disabled">Add to cart</button>
-        <!--
-        <button *ngIf="ph.stock==0" disabled>Add to cart</button>
-        <button *ngIf="ph.stock>0" >Add to cart</button>
-        -->
-    </li>
-</ul>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4" *ngFor="let ph of mobiles" class="right" [class.inStockCSS]="ph.inStockCSS">
+            <!-- if class.instockCss is true instockcss class is added. if instockclass is false the instockClass is removed-->
+            <h2>{{ph.id}}</h2>
+            <div><img height="150px" src="{{ph.image}}"></div>
+            <h2 class="mobPartName"> {{ph.name | uppercase}}</h2>
+            <p style="color:green">Price {{ph.price | currency:'INR' }}</p>
+            <p *ngIf="ph.stock>0">Stock left: {{ph.stock}}</p>
+            <p *ngIf="ph.stock==0">
+                <Mark>Out of Stock</Mark>
+            </p>
+            <button (click)="upqty(ph)">+</button> <!-- event binding :- html to javascript-->
+            {{ph.qty}}
+            <button (click)="downqty(ph)">-</button>
+            <button [disabled]="ph.disabled">Add to cart</button>
+            <!--
+            <button *ngIf="ph.stock==0" disabled>Add to cart</button>
+            <button *ngIf="ph.stock>0" >Add to cart</button>
+            -->
+        </div>
+    </div>
+</div>
 <!--[ note : when code is interpolated, the properties are read from the component and string are printed. ]
 
 Propert Binding :-  All we need to do is add brackets and specify a component property.
