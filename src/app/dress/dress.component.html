@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row" style="border: orange 2px solid">
+    <div class="col-sm-3" *ngFor="let resultData of dressDesc" style="border-right: orange 2px solid">
+      <div>{{resultData.category | uppercase}}</div>
+      <div>{{resultData.type}}</div>
+        <span *ngIf="resultData.gender==false">Female </span>
+        <span *ngIf="resultData.gender==true">Male </span>
+      <img width="200px" height="300px" [src]="resultData.img" [alt]="resultData.type">
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@ import {MobPartDataType} from './mob-parts';
 import {MOBPARTS} from './mocks';
 
 @Component({
-    selector: 'app-mob-parts',
+    selector: 'app-new',
     templateUrl: './mob-parts.component.html',
     styleUrls: ['./mob-parts.component.css']
 })
