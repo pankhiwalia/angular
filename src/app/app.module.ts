@@ -8,14 +8,15 @@ import {RouterModule, Routes} from '@angular/router';
 import {LaptopsComponent} from './laptops/laptops.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
 import {HomeComponent} from './home/home.component';
-import { AppRoutingModule } from './/app-routing.module';
-
+import {AppRoutingModule} from './/app-routing.module';
+import {MobPartsService} from './mob-parts/mob-parts.service';
 
 @NgModule({
 
     declarations: [AppComponent, MobPartsComponent, DressComponent, LaptopsComponent, ErrorPageComponent, HomeComponent],
     imports: [BrowserModule, FormsModule, AppRoutingModule],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    providers: [MobPartsService]
 
 })
 

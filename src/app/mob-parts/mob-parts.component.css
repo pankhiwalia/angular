@@ -1,35 +1,12 @@
-li {
-    list-style: none;
-}
-
-.right {
-    width: 20%;
-    float: right;
-}
-
-.mobPartName {
-    font-size: 26px;
-    font-weight: 300;
-    color: black;
-    margin: 0 0 24px;
-    -webkit-animation: mymove 5s infinite;
-    animation: mymove 5s infinite;
-}
-
 p {
-    color: #4c4a37;
-    text-shadow: 1px 1px black;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
-    line-height: 32px;
-    margin: 0 0 24px;
+    margin: 5px 0 5px 0;
     font-weight: bold;
 }
 
 .inStockCSS {
-    background: #57597D;
-    -webkit-border-image: -webkit-linear-gradient(right, #818fd8 0%, #cbb4e2 50%, #a6f2f5 100%);
-    -o-border-image: -webkit-linear-gradient(right, #818fd8 0%, #cbb4e2 50%, #a6f2f5 100%);
-    border-image: -webkit-linear-gradient(right, #818fd8 0%, #cbb4e2 50%, #a6f2f5 100%);
-    border-image-slice: 1;
+    border-radius: 2px;
+}
+
+.mt-5 {
+    margin-top: 10px
 }

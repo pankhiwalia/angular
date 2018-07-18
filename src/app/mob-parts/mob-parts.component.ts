@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MobPartDataType} from './mob-parts';
 import {MOBPARTS} from './mocks';
+import {MobPartsService} from './mob-parts.service';
 
 @Component({
     selector: 'app-new',
@@ -11,11 +12,15 @@ export class MobPartsComponent implements OnInit {
 
     mobiles: MobPartDataType[];
 
-    constructor() {
+    constructor(private MobPartsService: MobPartsService) { //part 3(uinf ascces specifiers// )
+
     }
 
     ngOnInit() {
-        this.mobiles = MOBPARTS;
+        // this.mobiles = MOBPARTS; //part 1 (call when we will call dummy data from mocks file)
+        /* let mobPartService = new MobPartsService();
+         this.mobiles = mobPartService.getMobParts(); */ // part 2 (when we are calling services usinh oops concept)
+        this.mobiles = this.MobPartsService.getMobParts();
     }
 
 // creating function and calling this fxn in html file
