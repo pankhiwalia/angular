@@ -1,15 +1,21 @@
 import {Injectable} from '@angular/core';
-import {MOBPARTS} from './mocks';
+import {MobPartDataType} from './mob-parts';
+import {Http} from '@angular/http';
+
+import 'rxjs/add/operator/map';
 
 @Injectable({
     providedIn: 'root'
 })
 export class MobPartsService {
 
-    constructor() {
+    constructor(private http: Http) {
     }
 
     getMobParts() {
-        return MOBPARTS;
+        //  return MOBPARTS; part 1 (using mocks file)
+        return this.http.get('assets/data/mobile-details.json').map(response => <MobPartDataType[]>response.json().data);
+
+
     }
 }

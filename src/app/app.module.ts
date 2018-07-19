@@ -10,11 +10,12 @@ import {ErrorPageComponent} from './error-page/error-page.component';
 import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from './/app-routing.module';
 import {MobPartsService} from './mob-parts/mob-parts.service';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
 
     declarations: [AppComponent, MobPartsComponent, DressComponent, LaptopsComponent, ErrorPageComponent, HomeComponent],
-    imports: [BrowserModule, FormsModule, AppRoutingModule],
+    imports: [BrowserModule, FormsModule, AppRoutingModule, HttpModule],
     bootstrap: [AppComponent],
     providers: [MobPartsService]
 

@@ -9,16 +9,14 @@
             <p *ngIf="ph.stock==0">
                 <Mark>Out of Stock</Mark>
             </p>
-            <form name="myForm" ng-submit="onSubmit()">
+
                 <button (click)="upqty(ph)">+</button> <!-- event binding :- html to javascript-->
                 <!-- <input type="text" class="number" [value]="ph.qty"> --><!-- property binding-->
                 <!--   <input type="text" class="number" (input)="ph.qty=$event.target.value">-->
-                <input style="width: 50px;" type="number" [(ngModel)]="ph.qty" name="price_field"
-                       ng-pattern="/^[0-9]{1,7}$/" required>
+                <input style="width: 50px;" type="number" [(ngModel)]="ph.qty" name="price_field" ng-pattern="/^[0-9]{1,7}$/" (input)="onlyNumericValue(ph.stock, $event.target.value)">
                 <button (click)="downqty(ph)">-</button>
                 <br>
                 <button [disabled]="ph.disabled" [class.inStockCSS]="ph.inStockCSS" type="submit" class="btn btn-primary mt-5">Add to cart </button>
-            </form>
             <!--
             <button *ngIf="ph.stock==0" disabled>Add to cart</button>
             <button *ngIf="ph.stock>0" >Add to cart</button>
