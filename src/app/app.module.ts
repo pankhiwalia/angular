@@ -11,13 +11,61 @@ import {HomeComponent} from './home/home.component';
 import {AppRoutingModule} from './/app-routing.module';
 import {MobPartsService} from './mob-parts/mob-parts.service';
 import {HttpModule} from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+import {LaptopService} from './laptops/laptop.service';
+import {HeroesComponent} from './heros/heros.component';
+import {HeroDetailComponent} from './hero-detail/hero-detail.component';
+import {MessagesComponent} from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './in-memory-data.service';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserService} from './user.service';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { TestModuleModule } from './test-module/test-module.module';
+import { UsersComponent } from './users/users.component';
+import { ViewComponent } from './users/view/view.component';
+import { AddComponent } from './users/add/add.component';
 
 @NgModule({
 
-    declarations: [AppComponent, MobPartsComponent, DressComponent, LaptopsComponent, ErrorPageComponent, HomeComponent],
-    imports: [BrowserModule, FormsModule, AppRoutingModule, HttpModule],
+    declarations: [
+        AppComponent,
+        MobPartsComponent,
+        DressComponent,
+        LaptopsComponent,
+        ErrorPageComponent,
+        HomeComponent,
+        HeroesComponent,
+        HeroDetailComponent,
+        MessagesComponent,
+        DashboardComponent,
+        SignUpComponent,
+         HeroSearchComponent,
+         UsersComponent,
+         ViewComponent,
+         AddComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        HttpModule,
+        HttpClientModule,
+       // ToastrModule.forRoot(),
+        //BrowserAnimationsModule,
+        // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+        // and returns simulated server responses.
+        // Remove it when a real server is ready to receive requests.
+        HttpClientInMemoryWebApiModule.forRoot(
+            InMemoryDataService, { dataEncapsulation: false }
+        ),
+       TestModuleModule
+    ],
     bootstrap: [AppComponent],
-    providers: [MobPartsService]
+    providers: [MobPartsService, LaptopService, UserService]
 
 })
 

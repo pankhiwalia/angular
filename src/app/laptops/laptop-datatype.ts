@@ -3,6 +3,7 @@ export class LaptopDataType {
     price: number;
     img: string;
     description: string;
-    stock: true;
+    stock: number;
+    stockCss: boolean;
     qty: number;
 }

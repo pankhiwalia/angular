@@ -5,6 +5,7 @@ p {
 .mt-5 {
     margin-top: 10px
 }
-.inStockCss{
+.StockCss{
     background: azure;
+    opacity: 0.3;
 }

@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "name": "Apple",
+      "price": 100000,
+      "img": "/assets/img/lap-4.jpg",
+      "description": "Apple high-end laptop gets better battery life and a lower price",
+      "stock": 4,
+      "stockCss": true,
+      "qty": 0
+    },
+    {
+      "name": "Apple",
+      "price": 100000,
+      "img": "/assets/img/lap-1.png",
+      "description": "Apple high-end laptop gets better battery life and a lower price",
+      "stock": 3,
+      "stockCss": true,
+      "qty": 0
+    },
+    {
+      "name": "Vostro",
+      "price": 20000,
+      "img": "/assets/img/lap-3.jpeg",
+      "description": "Apple high-end laptop gets better battery life and a lower price",
+      "stock": 5,
+      "stockCss": true,
+      "qty": 0
+    },
+    {
+      "name": "Lenovo",
+      "price": 30000,
+      "img": "/assets/img/lap-3.jpg",
+      "description": "Apple high-end laptop gets better battery life and a lower price",
+      "stock": 0,
+      "stockCss": false,
+      "qty": 0
+    },
+    {
+      "name": "dell",
+      "price": 90000,
+      "img": "/assets/img/lap-4.jpg",
+      "description": "Apple high-end laptop gets better battery life and a lower price",
+      "stock": 17,
+      "stockCss": true,
+      "qty": 0
+    }
+  ]
+}

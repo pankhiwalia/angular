@@ -1,26 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3 border border-success" *ngFor="let details of laptops">
-
-      <!-- if class.instockCss is true instockcss class is added. if instockclass is false the instockClass is removed-->
-      <h2>{{details.name | uppercase}}</h2>
-      <div><img height="150px" [src]="details.img"></div>
-      <p style="color:green">Price {{details.price | currency:'INR' }}</p>
-      <p *ngIf="details.qty>0">Stock left: {{details.stock}}</p>
-      <p *ngIf="details.qty==0">
-        <Mark>Out of Stock</Mark>
-      </p>
-      <form name="myForm" ng-submit="onSubmit()">
-
-        <!-- <input type="text" class="number" [value]="ph.qty"> --><!-- property binding-->
-        <!--   <input type="text" class="number" (input)="ph.qty=$event.target.value">-->
-        <input style="width: 50px;" type="number" [(ngModel)]="details.qty" name="price_field"
-               ng-pattern="/^[0-9]{1,7}$/" required>
-
-        <br>
-        <button  type="submit" class="btn btn-primary mt-5">Add to cart </button>
-      </form>
-
+<div class="container" xmlns="">
+    <div class="row">
+        <div class="col-sm-3 border border-success" *ngFor="let details of laptops">
+            <div [class.StockCss]="!details.stockCss">
+                <!-- if class.instockCss is true instockcss class is added. if instockclass is false the instockClass is removed-->
+                <h2>{{details.name | uppercase}}</h2>
+                <div><img height="150px" [src]="details.img"></div>
+                <p style="color:green">Price {{details.price | currency:'INR' }}</p>
+                <form name="myForm" ng-submit="onSubmit()">
+                    <button (click)="upqty(details)">+</button> <!-- event binding :- html to javascript-->
+                    <!-- <input type="text" class="number" [value]="ph.qty"> --><!-- property binding-->
+                    <!--   <input type="text" class="number" (input)="ph.qty=$event.target.value">-->
+                    <input style="width: 50px;" type="number" [(ngModel)]="details.qty" name="price_field"
+                           ng-pattern="/^[0-9]{1,7}$/" required>
+                    <button (click)="downqty(details)">-</button> <!-- event binding :- html to javascript-->
+                    <br>
+                    <p *ngIf="details.stock<=0">
+                        <button type="button" disabled class="btn btn-primary mt-5">Out of Stock</button>
+                    </p>
+                    <p *ngIf="details.stock>0">
+                        <button type="submit" class="btn btn-primary mt-5">Add to cart</button>
+                    </p>
+                    <a data-toggle="tooltip" title="hiee">details</a>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
