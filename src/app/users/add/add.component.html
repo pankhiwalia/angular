@@ -1,6 +1,8 @@
-<form method="post" class="form-control" action="">
-    <input name="name " class="" value="" type="text">
-    <input name="email" value="" type="text">
-    <input name="contact-no" value="" type="text">
-    <input type="submit" value="Add user">
+<form class="form-control" #addForm="ngForm" (ngSubmit)="OnSubmit(addForm.value)" >
+ <label>Name</label>   <input name="name" class="form-control" value="" type="text" ngModel="">
+    <label>Email</label>   <input name="email" class="form-control" value="" type="email" ngModel="">
+    <label>Password</label><input name="password" class="form-control" value="" type="password" ngModel="">
+    <input type="submit" value="Add user" class="btn btn-primary">
 </form>
+
+

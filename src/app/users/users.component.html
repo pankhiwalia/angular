@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html>
-
-<body>
 <table class="table table-striped">
-    <tr>
-        <td>   </td>
+    <tr *ngFor="let user of users">
+        <td>{{user['name']}}   </td>
+        <td> {{user['email']}}  </td>
+        <td>  {{user['password']}} </td>
         <td class="glyphicon-eye-open">view</td>
         <td class="glyphicon-edit"> edit</td>
         <td class="glyphicon-remove"> delete</td>
@@ -12,6 +10,4 @@
 
 </table>
 
-</body>
-
-</html>
+<router-outlet></router-outlet>

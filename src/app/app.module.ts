@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {MobPartsComponent} from './mob-parts/mob-parts.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {DressComponent} from './dress/dress.component';
 import {RouterModule, Routes} from '@angular/router';
 import {LaptopsComponent} from './laptops/laptops.component';
@@ -28,6 +28,7 @@ import { TestModuleModule } from './test-module/test-module.module';
 import { UsersComponent } from './users/users.component';
 import { ViewComponent } from './users/view/view.component';
 import { AddComponent } from './users/add/add.component';
+import {UserregisterService} from './users/userregister.service';
 
 @NgModule({
 
@@ -54,6 +55,7 @@ import { AddComponent } from './users/add/add.component';
         AppRoutingModule,
         HttpModule,
         HttpClientModule,
+        ReactiveFormsModule, // validation  and form builder or reactive forms
        // ToastrModule.forRoot(),
         //BrowserAnimationsModule,
         // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
@@ -65,7 +67,7 @@ import { AddComponent } from './users/add/add.component';
        TestModuleModule
     ],
     bootstrap: [AppComponent],
-    providers: [MobPartsService, LaptopService, UserService]
+    providers: [MobPartsService, LaptopService, UserService, UserregisterService]
 
 })
 

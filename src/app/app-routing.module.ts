@@ -10,6 +10,9 @@ import {HeroesComponent} from './heros/heros.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import {SignUpComponent} from './sign-up/sign-up.component';
+import {AddComponent} from './users/add/add.component';
+import {UsersComponent} from './users/users.component';
+import {ViewComponent} from './users/view/view.component';
 
 const appRoutes: Routes = [
     {path: 'Dashboard', component: DashboardComponent},
@@ -25,9 +28,15 @@ const appRoutes: Routes = [
 
         }]
     },
+    {path: 'users' , component: UsersComponent},
     {path: 'signUp', component: SignUpComponent},
     {path: '', redirectTo: '/Dashboard', pathMatch: 'full'},
+    {path: 'useradd', component: AddComponent},
     {path: '**', component: ErrorPageComponent}
+    // {path: 'users' , component: UsersComponent,children:[
+    //         {path: 'add' , component: AddComponent},
+    //         {path: 'view' , component: ViewComponent}
+    //     ]}
 ];
 
 
